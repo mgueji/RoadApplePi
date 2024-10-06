@@ -34,25 +34,25 @@ sudo apt upgrade -y
 ###########################################
 echo -e "\e[1;4;93mStep 2. Install pre-built dependencies from Apt\e[0m"
 sudo apt install -y dnsmasq hostapd libbluetooth-dev apache2 php7.0 php7.0-mysql php7.0-bcmath mariadb-server libmariadbclient-dev libmariadbclient-dev-compat uvcdynctrl
-sudo systemctl disable hostapd dnsmasq
+sudo systemctl disable hostapd dnsmasq ffmpeg
 
 ################
 # Build FFMpeg #
 ################
-echo -e "\e[1;4;93mStep 3. Build ffmpeg (this may take a while)\e[0m"
-ffmpegLocation=$(which ffmpeg)
-if [ $? != 0 ]
-then
-	wget https://www.ffmpeg.org/releases/ffmpeg-3.4.2.tar.gz
-	tar -xvf ffmpeg-3.4.2.tar.gz
-	cd ffmpeg-3.4.2
-	echo "./configure --enable-gpl --enable-nonfree --enable-mmal --enable-omx --enable-omx-rpi"
-	./configure --enable-gpl --enable-nonfree --enable-mmal --enable-omx --enable-omx-rpi
-	make -j$(nproc)
-	sudo make install
-else
-	echo "FFMpeg already found at $ffmpegLocation! Using installed version."
-fi
+#echo -e "\e[1;4;93mStep 3. Build ffmpeg (this may take a while)\e[0m"
+#ffmpegLocation=$(which ffmpeg)
+#if [ $? != 0 ]
+#then
+#	wget https://www.ffmpeg.org/releases/ffmpeg-3.4.2.tar.gz
+#	tar -xvf ffmpeg-3.4.2.tar.gz
+#	cd ffmpeg-3.4.2
+#	echo "./configure --enable-gpl --enable-nonfree --enable-mmal --enable-omx --enable-omx-rpi"
+#	./configure --enable-gpl --enable-nonfree --enable-mmal --enable-omx --enable-omx-rpi
+#	make -j$(nproc)
+#	sudo make install
+#else
+#	echo "FFMpeg already found at $ffmpegLocation! Using installed version."
+#fi
 
 #######################
 # Install RoadApplePi #
