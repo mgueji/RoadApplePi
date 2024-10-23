@@ -1,11 +1,17 @@
 # My fork changes
-To recompile the recording service after changing the recording options in raprec.c .
+To recompile the recording service after changing the recording options in raprec.c
+
 	```
  	cd ./RoadApplePi
+  
 	sudo systemctl stop raprec
+ 
 	sudo make clean
+ 
 	sudo make
+ 
  	sudo make install
+  
 	sudo systemctl restart raprec
  	```
 
