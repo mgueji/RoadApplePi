@@ -1,3 +1,14 @@
+# My fork changes
+To recompile the recording service after changing the recording options in raprec.c .
+	```
+ 	cd ./RoadApplePi
+	sudo systemctl stop raprec
+	sudo make clean
+	sudo make
+ 	sudo make install
+	sudo systemctl restart raprec
+ 	```
+
 # RoadApplePi 
 RoadApplePi is a simple to install system for your Raspberry Pi designed to record dashcam videos and engine information from your car in real-time, and then make it all accessable from an easy-to-use Web App that can be viewed on your smartphone or computer.
 
